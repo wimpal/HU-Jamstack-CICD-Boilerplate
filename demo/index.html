@@ -14,7 +14,7 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div id="netlify" style="display: block !important" class="col-12 col-md-8 col-lg-6">
+            <div id="netlify" class="col-12 col-md-8 col-lg-6">
                 <div class="card">
                     <img src="https://media.giphy.com/media/3ogwFX9sL9SgVVw1mU/giphy.gif" class="card-img-top" alt="Excitement">
                     <div class="card-body">
@@ -47,6 +47,10 @@
             </div>
         </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/local_or_netlify.js"></script>
+    <script>
+        const result = determineOrigin(window.location.href);
+        document.getElementById(result).style.display = "block";
+    </script>
 </body>
 </html>

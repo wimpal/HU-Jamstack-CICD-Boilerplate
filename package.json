@@ -1,16 +1,22 @@
 {
-  "name": "cop-jamstack-boilerplate",
+  "name": "hu-jamstack-cicd-boilerplate",
   "version": "1.0.0",
-  "description": "Boilerplate for Jamstack code (Netlify, 11ty & Contentful) for the Webapps community of practice",
+  "description": "Boilerplate for Jamstack and CICD code for a guest lecture at the HU",
   "scripts": {
-    "build": "npm run data && npx eleventy",
+    "start": "npm run data && npm test && npx eleventy && npm run copy-resources",
     "eleventy": "npx eleventy --serve",
-    "data": "node src/scripts/sourceData"
+    "data": "node src/scripts/sourceData",
+    "test": "cucumber-js",
+    "copy-resources": "copyfiles src/css/* dist"
   },
   "author": "Gabriël Moawad",
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "nunjucks-includeData": "0.0.9",
     "contentful": "^7.14.0"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.2.0",
+    "cucumber": "^6.0.5"
   }
 }
