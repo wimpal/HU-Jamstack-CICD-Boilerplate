@@ -4,7 +4,7 @@
   "description": "Boilerplate for Jamstack and CICD code for a guest lecture at the HU",
   "scripts": {
     "start": "npm run data && npm test && npx eleventy && npm run copy-resources",
-    "eleventy": "npx eleventy --serve",
+    "eleventy": "npx eleventy --serve && npm run copy-resources",
     "data": "node src/scripts/sourceData",
     "test": "cucumber-js",
     "copy-resources": "copyfiles src/css/* dist"
